@@ -1,0 +1,20 @@
+{
+  "name": "custom-css-reset",
+  "version": "0.0.1",
+  "description": "Personal CSS reset",
+  "type": "module",
+  "main": "index.css",
+  "exports": {
+    ".": "./index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuarhdz/reset.git"
+  },
+  "author": "Anuar Reyes <anuar@hey.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anuarhdz/reset/issues"
+  },
+  "homepage": "https://github.com/anuarhdz/reset#readme"
+}

@@ -1,0 +1,237 @@
+:root {
+  --font-family-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family-heading: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-weight-heading: 600;
+  --input-border-color: #6b7280;
+  --input-border-width: 1px;
+  --input-border-style: solid;
+  --input-background-color: #fff;
+  --input-border: var(--input-border-width) var(--input-border-style) var(--input-border-color, #000);
+  --button-padding-vertical: 0.5rem;
+  --button-padding-horizontal: 0.75rem;
+  --button-border-color: #6b7280;
+  --button-border-width: 0;
+  --button-border-style: solid;
+  --button-border: var(--button-border-width) var(--button-border-style) var(--button-border-color, #000);
+  --button-background-color: buttonface;
+}
+
+html {
+  font-family: var(--font-family-body);
+  font-weight: normal;
+  line-height: 1.5;
+  font-size: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+}
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where([hidden]:not([hidden='until-found'])) {
+  display: none !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:not(ul[role='list'], ol[role='list'], .text-block, .text-block *, input, select, textarea, button, fieldset) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(button, label, select, summary, [role='button'], [role='option'], .button) {
+  cursor: pointer;
+}
+
+:where(:disabled) {
+  cursor: not-allowed;
+}
+
+:where(label:has(> input:disabled), label:has(+ input:disabled)) {
+  cursor: not-allowed;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(img, picture, svg) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(img, video) {
+  object-fit: cover;
+  object-position: center;
+}
+
+figure img + figcaption {
+  margin-block-start: 0.5em;
+  font-size: 0.9rem;
+}
+
+:where(hr) {
+  border: none;
+  border-block-start: 1px solid;
+  color: inherit;
+  block-size: 0;
+  overflow: visible;
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
+}
+
+.text-block ul,
+.text-block ol {
+  padding-inline-start: 20px;
+}
+
+.text-block *:not(li) + *:not(hr, li, figure, figcaption) {
+  margin-block-start: 1rem;
+}
+
+.text-block hr + * {
+  margin-block-start: 0 !important;
+}
+
+.text-block figure {
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-block-start: 2.5rem;
+  margin-block-end: 2.5rem;
+}
+
+blockquote {
+  font-style: italic;
+  font-weight: 500;
+  quotes: '"\\201C""\\201D""\\2018""\\2019"';
+}
+
+blockquote > p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote > p:last-of-type::after {
+  content: close-quote;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+}
+
+input:not([type='radio'], [type='checkbox']),
+textarea,
+select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0;
+  line-height: 1.5;
+  border: var(--input-border);
+  font-size: inherit;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+label + input,
+label + textarea,
+label + select {
+  margin-block-start: 1rem;
+}
+
+button,
+.button {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  padding: var(--padding);
+  border: var(--button-border);
+}
+
+.button:not(button) {
+  display: inline-block;
+  padding: var(--padding);
+  border: var(--button-border);
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--button-background-color);
+}
+
+button:not(button.icon-button),
+.button:not(.icon-button) {
+  --padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+}
+
+button.icon-button {
+  --padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+}
+
+form .input {
+  margin-block-start: 1.5rem;
+}
+
+textarea {
+  resize: vertical;
+  resize: block;
+  min-height: 5rem;
+  max-height: 12rem;
+}
+
+fieldset {
+  padding: 0.5rem 0.8rem 0.8rem;
+}
+
+pre,
+code {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.text-block code::before {
+  content: '`';
+}
+
+.text-block code::after {
+  content: '`';
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
