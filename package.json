@@ -1,5 +1,5 @@
 {
-  "name": "custom-css-reset",
+  "name": "@anuarhdz/css-reset",
   "version": "0.0.1",
   "description": "Personal CSS reset",
   "type": "module",
